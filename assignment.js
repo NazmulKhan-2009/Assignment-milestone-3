@@ -11,7 +11,7 @@ function feetToMile(feet){
     return feet +" feet is "+ mile +" mile"
   }    
 }
-let output=feetToMile(1)
+let output=feetToMile(5)
 console.log(output);
 
 // Answer of Question:2
@@ -34,37 +34,39 @@ if(chair<=0 || table<=0 || bed<=0){
   return totalWoodRequire;
 }
 }
-let result=woodCalculator(1,1,1)
+let result=woodCalculator(14,5,12)
 console.log(result);
 
 
 // Answer of Question:3
 
 function brickCalculator(floor){
-    let brickPerFeet=1000;
+  let brickPerFeet=1000;
+  let tenthFloorFeet=15;
+  let twentiethFloorFeet=12;
+  let twentiethFloorUpFeet=10;
 
 if(floor==null || floor<=0 ){
-    alert("Please input the field in positive number")
+  alert("Please input the field in positive number")
 }else{
-  if(floor<=10){
-    let eachFloorFeet=15;
-    let totalFeet=eachFloorFeet*floor;
-    let totalBrickRequire=totalFeet*brickPerFeet
-    return  totalBrickRequire +" Bricks require for "+floor+" floor"       
+if(floor<=10){
+  let totalFeet=tenthFloorFeet*floor;
+  let totalBrickRequire=totalFeet*brickPerFeet;
+  return  totalBrickRequire +" Bricks require for "+floor+" floor"   
+
 }else if(floor<=20 && floor>=11){
-    let eachFloorFeet=12;
-    let totalFeet=eachFloorFeet*floor;
-    let totalBrickRequire=totalFeet*brickPerFeet
-    return totalBrickRequire +" Bricks require for "+floor+" floor" 
+  let totalFeet=(floor-10)*twentiethFloorFeet+(tenthFloorFeet*10);
+  let totalBrickRequire=totalFeet*brickPerFeet;
+  return totalBrickRequire +" Bricks require for "+floor+" floor" 
+
 }else{
-    let eachFloorFeet=10;
-    let totalFeet=eachFloorFeet*floor;
-    let totalBrickRequire=totalFeet*brickPerFeet
-    return totalBrickRequire +" Bricks require for "+floor+" floor" 
+  let totalFeet=(tenthFloorFeet*10)+(twentiethFloorFeet*10)+(floor-20)*twentiethFloorUpFeet;
+  let totalBrickRequire=totalFeet*brickPerFeet;
+  return totalBrickRequire +" Bricks require for "+floor+" floor" 
 }
 }
 }
-let bricksRequire=brickCalculator(1)
+let bricksRequire=brickCalculator(25)
 console.log(bricksRequire);
 
 
