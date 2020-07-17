@@ -1,55 +1,71 @@
 // Answer of Question:1
 
 function feetToMile(feet){
-  let inMile=feet*0.000189394;
-  let mile=inMile.toFixed(8)
-  return mile
+
+  if(feet<=0 || feet ==='' || feet==null){
+    alert("You have to input a positive number")
+  }
+  else{
+    let inMile=feet*0.000189394;
+    let mile=inMile.toFixed(8)
+    return feet +" feet is "+ mile +" mile"
+  }    
 }
-
-console.log(feetToMile(10));
-
-
+let output=feetToMile(1)
+console.log(output);
 
 // Answer of Question:2
 
 function  woodCalculator(chair,table,bed){
+    // wood per unit
+    let cubicFtPerChair=1;
+    let cubicFtPerTable=3;
+    let cubicFtPerBed=5;
 
-let woodForChair=chair*1;
-let woodForTable=table*3;
-let woodForBed=bed*5;
-let totalWoodRequire="Total "+(woodForChair+woodForTable+woodForBed)+" Cubic Feet Wood require ";
-return totalWoodRequire;
+    // wood require per item
+    let woodForChair=chair*cubicFtPerChair;
+    let woodForTable=table*cubicFtPerTable;
+    let woodForBed=bed*cubicFtPerBed;
 
+if(chair<=0 || table<=0 || bed<=0){
+    alert('You have to input a positive number')
+}else{
+    let totalWoodRequire="Total "+(woodForChair+woodForTable+woodForBed)+" Cubic Feet Wood require ";
+  return totalWoodRequire;
 }
-console.log(woodCalculator(14,5,12));
+}
+let result=woodCalculator(1,1,1)
+console.log(result);
 
 
 // Answer of Question:3
 
 function brickCalculator(floor){
-  let brickPerFeet=1000;
+    let brickPerFeet=1000;
 
+if(floor==null || floor<=0 ){
+    alert("Please input the field in positive number")
+}else{
   if(floor<=10){
-      let eachFloorFeet=15;
-      let totalFeet=eachFloorFeet*floor;
-      let totalBrickRequire=totalFeet*brickPerFeet
-      return  totalBrickRequire +" Bricks require for "+floor+" floor"       
-  }else if(floor<=20 && floor>=11){
+    let eachFloorFeet=15;
+    let totalFeet=eachFloorFeet*floor;
+    let totalBrickRequire=totalFeet*brickPerFeet
+    return  totalBrickRequire +" Bricks require for "+floor+" floor"       
+}else if(floor<=20 && floor>=11){
     let eachFloorFeet=12;
     let totalFeet=eachFloorFeet*floor;
     let totalBrickRequire=totalFeet*brickPerFeet
     return totalBrickRequire +" Bricks require for "+floor+" floor" 
-  }else{
+}else{
     let eachFloorFeet=10;
     let totalFeet=eachFloorFeet*floor;
     let totalBrickRequire=totalFeet*brickPerFeet
     return totalBrickRequire +" Bricks require for "+floor+" floor" 
-  }
-
 }
-
-console.log(brickCalculator(18));
-
+}
+}
+let bricksRequire=brickCalculator(1)
+console.log(bricksRequire);
 
 
 // Answer of Question:4
@@ -74,5 +90,5 @@ function tinyFriend(names) {
   }
 }
 
-var tinyName = tinyFriend(["Shamim","Chisty","Rezowan","Khan","Monirul","Ragib"]);
+let tinyName = tinyFriend(["Shamim","Chisty","Rezowan","Khan","Monirul","Ragib"]);
 console.log(tinyName);
