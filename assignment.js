@@ -1,5 +1,3 @@
-//
-
 // Answer of Question:1
 
 function feetToMile(feet){
@@ -53,16 +51,28 @@ function brickCalculator(floor){
 console.log(brickCalculator(18));
 
 
+
 // Answer of Question:4
-function tinyFriend(){
-  var myFriendName=["Shamim","Sufian","Chisty","Emon","Monir"];
-  var minInNumber=Math.min(myFriendName[0].length,myFriendName[1].length,myFriendName[2].length,myFriendName[3].length,myFriendName[4].length)
+function tinyFriend(names) {
   
-  for(let p=0;p<myFriendName.length;p++){
-      if(myFriendName[p].length===minInNumber){
-        return(myFriendName[p]);
+  let namesLength = Infinity;
+  let shortName = "";
+  if(names.length===0){
+      alert("Input the Names")     
+    }else{
+    if (names.length > 0) {
+      for (let f = 0; f < names.length; f++) {
+          if (typeof names[f] === 'string' && names[f].length < namesLength) {
+              shortName = names[f];
+              namesLength = names[f].length;
+          }
       }
-    }
   }
-  
-  console.log(tinyFriend());
+
+      return "My tiny friend by name is "+ shortName;
+
+  }
+}
+
+var tinyName = tinyFriend(["Shamim","Chisty","Rezowan","Khan","Monirul","Ragib"]);
+console.log(tinyName);
